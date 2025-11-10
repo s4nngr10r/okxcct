@@ -11,16 +11,6 @@ A modular Go system for analyzing and comparing OKX margin and swap instruments,
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    A[cmd/getinsts.go (main)] -->|calls| B[internal/okxapi.go]
-    A -->|calls| C[internal/analyzer.go]
-    A -->|calls| D[internal/storage.go]
-    B -->|uses types| E[internal/models.go]
-    C -->|uses types| E
-    D -->|uses types| E
-```
-
 - **cmd/getinsts.go**: Main entrypoint, CLI, orchestration
 - **internal/models.go**: Data structures (Instrument, MarkPrice, etc.)
 - **internal/okxapi.go**: OKX API logic (fetching instruments, mark prices)
